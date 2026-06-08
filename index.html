@@ -1,0 +1,1242 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SOC-213 Module Three Concept Explorer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f4fb;
+  color: #263238;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #5e548e, #9f86c0, #be95c4);
+  color: white;
+  padding: 38px 28px;
+  text-align: center;
+  border-radius: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+.hero .icons {
+  font-size: 50px;
+}
+
+.hero h1 {
+  margin: 8px 0;
+  font-size: 36px;
+}
+
+.visual-map {
+  background: white;
+  margin: 24px 0;
+  padding: 24px;
+  border-radius: 20px;
+  border-left: 8px solid #9f86c0;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+
+.flow {
+  font-size: 22px;
+  font-weight: bold;
+  color: #5e548e;
+}
+
+.tool-box, .activity {
+  background: white;
+  padding: 22px;
+  margin: 24px 0;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+
+.search {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #cdb4db;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.section {
+  margin: 22px 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+
+.section button {
+  width: 100%;
+  background: #5e548e;
+  color: white;
+  border: none;
+  padding: 20px;
+  font-size: 22px;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.section button:hover {
+  background: #44396f;
+}
+
+.section-content {
+  display: none;
+  background: white;
+  padding: 22px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e6d8ef;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.07);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #5e548e;
+}
+
+.label {
+  display: inline-block;
+  background: #f0e6f6;
+  color: #4a3d70;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 4px 4px 8px 0;
+}
+
+.quick-check {
+  background: #fff8e1;
+  border-left: 6px solid #f4a261;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.review-btn, .calc-btn {
+  margin-top: 12px;
+  background: #5e548e;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.review-btn.done {
+  background: #6c757d;
+}
+
+.result {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f1f8e9;
+  font-weight: bold;
+}
+
+.footer-note {
+  background: #efe7f6;
+  padding: 18px;
+  border-radius: 16px;
+  margin-top: 28px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="icons">🧠 ⚧️ 👥 🌎</div>
+    <h1>Module Three Concept Explorer</h1>
+    <p><strong>Socialization & Gender</strong><br>
+    Chapter 5: Sex, Gender, Identity, Socialization, Inequality, and Global Gender Issues</p>
+  </div>
+
+  <div class="visual-map">
+    <h2>How Gender Becomes Social</h2>
+    <div class="flow">Biology → Identity → Socialization → Roles → Inequality → Social Change</div>
+    <p>This module explores how societies define gender, teach gender expectations, reward or punish behavior, and create unequal opportunities across families, schools, peer groups, workplaces, and cultures.</p>
+  </div>
+
+  <div class="tool-box">
+    <h2>Search the Concepts</h2>
+    <input class="search" type="text" id="searchBox" placeholder="Search sex, gender identity, sexism, patriarchy, hidden curriculum, toxic masculinity, etc.">
+  </div>
+
+  <div class="activity">
+    <h2>🎭 Gender Socialization Reflection</h2>
+    <p>Select a setting to see how gender expectations may be taught or reinforced.</p>
+
+    <select id="genderScenario" style="padding:12px; border-radius:10px; width:100%; max-width:520px;">
+      <option value="">Choose a setting...</option>
+      <option value="family">Family</option>
+      <option value="school">School</option>
+      <option value="peers">Peer Group</option>
+      <option value="media">Media and Popular Culture</option>
+    </select>
+
+    <button class="calc-btn" onclick="showScenario()">Show Example</button>
+
+    <div id="scenarioResult" class="result">
+      Choose a setting above.
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggleSection(this)">⚧️ Sex, Gender & Identity</button>
+    <div class="section-content">
+      <div class="card-grid">
+
+        <div class="card concept-card">
+          <h3>Sex</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>Biological characteristics often used to classify people as male, female, or intersex.</p>
+          <h4>Example</h4>
+          <p>Chromosomes, hormones, reproductive anatomy, and other physical traits may be used in sex classification.</p>
+          <h4>Connects To</h4>
+          <p>Intersex, Hormones, Gender Identity, Nature versus Nurture Debate</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How is sex different from gender identity?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Intersex</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A term for people born with biological sex characteristics that do not fit typical definitions of male or female.</p>
+          <h4>Example</h4>
+          <p>A person may have variations in chromosomes, hormones, or reproductive anatomy.</p>
+          <h4>Connects To</h4>
+          <p>Sex, Hormones, Gender Identity, Non-binary</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Why does intersex challenge overly simple ideas about sex categories?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Gender Identity</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A person’s internal understanding or sense of their own gender.</p>
+          <h4>Example</h4>
+          <p>A person may identify as a woman, man, non-binary, transgender, cisgender, or another gender identity.</p>
+          <h4>Connects To</h4>
+          <p>Transgender, Cisgender, Non-binary, Gendered Roles</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Why is gender identity not the same thing as gender stereotypes?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Non-binary</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A gender identity that does not fit exclusively within the categories of man or woman.</p>
+          <h4>Example</h4>
+          <p>A non-binary person may experience their gender as both, neither, or outside traditional binary categories.</p>
+          <h4>Connects To</h4>
+          <p>Gender Identity, Transgender, Gender Ideology, Gender Stereotypes</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How does non-binary identity challenge binary gender expectations?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Transgender</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A term for people whose gender identity differs from the sex they were assigned at birth.</p>
+          <h4>Example</h4>
+          <p>A person assigned male at birth may identify as a woman.</p>
+          <h4>Connects To</h4>
+          <p>Gender Identity, Non-binary, Cisgender, Gender Ideology</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Why is transgender an identity concept rather than a role concept?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Cisgender</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A term for people whose gender identity aligns with the sex they were assigned at birth.</p>
+          <h4>Example</h4>
+          <p>A person assigned female at birth who identifies as a woman is cisgender.</p>
+          <h4>Connects To</h4>
+          <p>Gender Identity, Transgender, Gendered Roles</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How does this concept help distinguish identity from biology?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Hormones</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>Chemical messengers in the body that influence physical development, reproduction, and other biological processes.</p>
+          <h4>Example</h4>
+          <p>Estrogen and testosterone are often discussed in relation to sex characteristics and development.</p>
+          <h4>Connects To</h4>
+          <p>Sex, Intersex, Nature versus Nurture Debate, Sociobiology</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Why should sociologists be careful not to reduce gender behavior only to biology?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggleSection(this)">👶 Learning Gender: Socialization & Development</button>
+    <div class="section-content">
+      <div class="card-grid">
+
+        <div class="card concept-card">
+          <h3>Nature versus Nurture Debate</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A debate about the relative influence of biology and social environment on human behavior.</p>
+          <h4>Example</h4>
+          <p>Researchers may ask whether gendered behavior is shaped more by biology, socialization, or the interaction of both.</p>
+          <h4>Connects To</h4>
+          <p>Hormones, Sociobiology, Social Learning Theory, Cognitive Development Theory</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Why do sociologists usually emphasize social environment?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Sociobiology</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A perspective that examines how biological and evolutionary factors may influence social behavior.</p>
+          <h4>Example</h4>
+          <p>A sociobiological explanation might examine whether some behaviors are connected to reproduction or evolutionary survival.</p>
+          <h4>Connects To</h4>
+          <p>Nature versus Nurture Debate, Hormones, Sex, Gender Roles</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Why might sociologists critique explanations that rely only on biology?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Social Learning Theory</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A theory that people learn behavior by observing others, imitating role models, and receiving rewards or punishments.</p>
+          <h4>Example</h4>
+          <p>A child may learn gendered behavior by watching parents, siblings, teachers, peers, or media figures.</p>
+          <h4>Connects To</h4>
+          <p>Role Model, Peer Group, Gendered Roles, Gender Stereotypes</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How do rewards and punishments teach gender expectations?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Role Model</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A person whose behavior is observed and imitated by others.</p>
+          <h4>Example</h4>
+          <p>Children may model gendered behavior after parents, older siblings, teachers, athletes, or influencers.</p>
+          <h4>Connects To</h4>
+          <p>Social Learning Theory, Socialization, Peer Group, Gendered Roles</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Who teaches gender expectations through example?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Cognitive Development Theory</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A theory that children actively develop an understanding of gender as they grow and organize information about the social world.</p>
+          <h4>Example</h4>
+          <p>A child may begin categorizing behaviors, clothing, toys, or activities as connected to gender because of social messages they observe.</p>
+          <h4>Connects To</h4>
+          <p>Gender Identity, Gender Stereotypes, Social Learning Theory</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How do children actively make sense of gender categories?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Peer Group</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A group of people, often similar in age or status, who influence attitudes, behavior, and identity.</p>
+          <h4>Example</h4>
+          <p>Friends may reinforce gender expectations by praising certain behaviors or teasing others.</p>
+          <h4>Connects To</h4>
+          <p>Social Learning Theory, Gender Stereotypes, Gendered Roles, Role Model</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How can peers reward or punish gender behavior?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Hidden Curriculum</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>Unspoken lessons, expectations, and norms taught through school routines, classroom practices, and institutional culture.</p>
+          <h4>Example</h4>
+          <p>Schools may subtly teach gender expectations through dress codes, classroom examples, activities, or teacher expectations.</p>
+          <h4>Connects To</h4>
+          <p>Socialization, Gendered Roles, Gender Stereotypes, Gender Stratification</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How can schools teach gender expectations without directly stating them?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggleSection(this)">🎭 Gender Roles, Stereotypes & Ideology</button>
+    <div class="section-content">
+      <div class="card-grid">
+
+        <div class="card concept-card">
+          <h3>Gendered Roles</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>Social expectations for behavior based on gender.</p>
+          <h4>Example</h4>
+          <p>A society may expect girls to be nurturing and boys to be tough, even though individuals vary widely.</p>
+          <h4>Connects To</h4>
+          <p>Gender Stereotypes, Gender Ideology, Social Learning Theory, Hidden Curriculum</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How do gendered roles shape family expectations?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Gender Stereotypes</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>Oversimplified beliefs about how people should behave based on gender.</p>
+          <h4>Example</h4>
+          <p>Assuming boys are naturally better at science or girls are naturally better at caregiving.</p>
+          <h4>Connects To</h4>
+          <p>Gendered Roles, Sexism, Self-objectification, Toxic Masculinity</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Why can stereotypes limit individual choices?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Gender Ideology</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A set of beliefs about what gender means and how people should behave based on gender.</p>
+          <h4>Example</h4>
+          <p>A traditional gender ideology may claim men should be providers and women should be caregivers.</p>
+          <h4>Connects To</h4>
+          <p>Gendered Roles, Patriarchy, Sexism, Gender Stratification</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How can gender ideology shape family roles?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Self-objectification</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>The process of viewing oneself primarily as an object to be evaluated by appearance or others’ judgment.</p>
+          <h4>Example</h4>
+          <p>A person may become overly focused on appearance because media and peer messages emphasize attractiveness as social value.</p>
+          <h4>Connects To</h4>
+          <p>Gender Stereotypes, Sexism, Sexual Harassment, Peer Group</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How can media messages contribute to self-objectification?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Toxic Masculinity</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A pattern of harmful expectations that pressure boys or men to suppress emotion, prove dominance, avoid vulnerability, or use aggression to demonstrate masculinity.</p>
+          <h4>Example</h4>
+          <p>A boy may be mocked for crying or pressured to act tough even when he is hurt or afraid.</p>
+          <h4>Connects To</h4>
+          <p>Gender Stereotypes, Gender Ideology, Patriarchy, Peer Group</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How can gender expectations harm boys and men too?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggleSection(this)">⚖️ Gender Inequality, Power & Stratification</button>
+    <div class="section-content">
+      <div class="card-grid">
+
+        <div class="card concept-card">
+          <h3>Sexism</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>Prejudice, discrimination, or unequal treatment based on sex or gender.</p>
+          <h4>Example</h4>
+          <p>A workplace assumes women are less committed after becoming parents and offers fewer advancement opportunities.</p>
+          <h4>Connects To</h4>
+          <p>Gender Stratification, Patriarchy, Gender Stereotypes, Sexual Harassment</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How can sexism appear in both attitudes and institutions?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Gender Stratification</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>The unequal distribution of resources, power, status, and opportunities based on gender.</p>
+          <h4>Example</h4>
+          <p>Gender differences in income, leadership positions, unpaid labor, education access, or political power.</p>
+          <h4>Connects To</h4>
+          <p>Sexism, Patriarchy, Global Gender Gap Index, Gender Ideology</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How is gender stratification different from individual prejudice?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Sexual Harassment</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>Unwanted sexual attention, comments, behavior, or pressure that creates an intimidating, hostile, or unequal environment.</p>
+          <h4>Example</h4>
+          <p>A worker receives repeated unwanted comments about appearance from a supervisor or coworker.</p>
+          <h4>Connects To</h4>
+          <p>Sexism, Gender Stratification, Patriarchy, Power</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Why is sexual harassment connected to power, not only individual behavior?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Patriarchy</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A social system in which men as a group hold more power, authority, and privilege than women and other gender groups.</p>
+          <h4>Example</h4>
+          <p>Men may be overrepresented in political leadership, religious authority, corporate leadership, or family decision-making.</p>
+          <h4>Connects To</h4>
+          <p>Gender Stratification, Sexism, Gender Ideology, Toxic Masculinity</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How can patriarchy shape institutions as well as families?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Global Gender Gap Index</h3>
+          <span class="label">Chapter 5</span>
+          <h4>Definition</h4>
+          <p>A measure used to compare gender inequality across countries in areas such as economic participation, education, health, and political empowerment.</p>
+          <h4>Example</h4>
+          <p>A country may rank higher if gender gaps are smaller in employment, schooling, health outcomes, and political representation.</p>
+          <h4>Connects To</h4>
+          <p>Gender Stratification, Global Inequality, Patriarchy, Sexism</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Why is it useful to measure gender inequality across countries?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggleSection(this)">🌎 Global Gender Issues</button>
+    <div class="section-content">
+      <div class="card-grid">
+
+        <div class="card concept-card">
+          <h3>Clitoridectomy</h3>
+          <span class="label">Chapter 5</span>
+          <span class="label">Sensitive Topic</span>
+          <h4>Definition</h4>
+          <p>A form of female genital cutting involving partial or total removal of the clitoris.</p>
+          <h4>Example</h4>
+          <p>Sociologists examine this practice by considering culture, gender inequality, social control, power, and human rights debates.</p>
+          <h4>Connects To</h4>
+          <p>Gender Stratification, Patriarchy, Global Gender Gap, Gender Ideology</p>
+          <div class="quick-check"><strong>Quick Check:</strong> How can sociologists study harmful practices while also avoiding simplistic cultural stereotypes?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+        <div class="card concept-card">
+          <h3>Infibulation</h3>
+          <span class="label">Chapter 5</span>
+          <span class="label">Sensitive Topic</span>
+          <h4>Definition</h4>
+          <p>A form of female genital cutting involving narrowing or closing the vaginal opening.</p>
+          <h4>Example</h4>
+          <p>This practice is often discussed in relation to gender control, bodily autonomy, tradition, inequality, and human rights.</p>
+          <h4>Connects To</h4>
+          <p>Clitoridectomy, Patriarchy, Sexism, Gender Stratification</p>
+          <div class="quick-check"><strong>Quick Check:</strong> Why should this topic be discussed with care, accuracy, and respect for human dignity?</div>
+          <button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+        </div>
+
+      </div>
+
+      <div class="activity">
+        <h2>🌎 Instructor Note on Sensitive Topics</h2>
+        <p>Some concepts in this module involve sensitive issues related to bodies, gender, culture, inequality, and human rights. The goal is not to stereotype any group, but to understand how social norms, gender power, and institutions can shape people’s lives.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <strong>Instructor Note:</strong> Gender is not only an individual identity. It is also a social structure shaped by families, schools, peer groups, media, workplaces, governments, and culture. As you study, ask how biology, identity, socialization, power, and inequality interact.
+  </div>
+
+</div>
+```html
+<!-- SECTION 6: DATING & MATE SELECTION -->
+
+<div class="section">
+
+<button onclick="toggleSection(this)">💍 Dating & Mate Selection</button>
+
+<div class="section-content">
+
+<div class="card-grid">
+
+<div class="card concept-card">
+<h3>Dating</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+The process through which people interact socially to explore romantic, emotional, or long-term relationship possibilities.
+</p>
+
+<h4>Example</h4>
+<p>
+Two people spend time together to determine compatibility, attraction, and shared interests.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Marriage Market, Filter Theory, Propinquity
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+How has dating changed over time because of technology?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Marriage Market</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+A sociological concept suggesting that individuals evaluate potential partners based on characteristics viewed as desirable within society.
+</p>
+
+<h4>Example</h4>
+<p>
+Factors such as education, occupation, income, values, attractiveness, and personality may influence partner selection.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Filter Theory, Homogamy, Hypergamy
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+Why do sociologists compare dating to a marketplace?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Types of Dating</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+Dating relationships vary and may include casual dating, exclusive dating, online dating, group dating, or courtship-oriented dating.
+</p>
+
+<h4>Example</h4>
+<p>
+Some individuals date multiple people casually, while others seek long-term committed relationships.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Dating, Marriage Market, Filter Theory
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+How might goals influence the type of dating someone chooses?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Filter Theory</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+A theory suggesting that people narrow potential partners through a series of social, cultural, and personal filters.
+</p>
+
+<h4>Example</h4>
+<p>
+People may first meet through proximity, then consider shared values, interests, education, religion, or long-term goals.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Propinquity, Homogamy, Marriage Market
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+Why don't people consider every potential partner equally?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Propinquity</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+The tendency for people who live, work, study, or spend time near one another to form relationships.
+</p>
+
+<h4>Example</h4>
+<p>
+Many relationships begin among classmates, coworkers, neighbors, or friends of friends.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Filter Theory, Dating, Homogamy
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+Why does proximity increase opportunities for relationships?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Homogamy</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+The tendency for individuals to choose partners who are similar to themselves.
+</p>
+
+<h4>Example</h4>
+<p>
+People often select partners with similar education levels, values, religion, race, social class, or interests.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Filter Theory, Marriage Market, Propinquity
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+Why is similarity often associated with relationship stability?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Heterogamy</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+The tendency for individuals to form relationships with people who differ from themselves in important characteristics.
+</p>
+
+<h4>Example</h4>
+<p>
+Partners may differ significantly in age, religion, education, culture, or social class.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Homogamy, Hypergamy, Hypogamy
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+What advantages and challenges might heterogamous relationships experience?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Hypergamy</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+Marrying or partnering with someone perceived to have higher social status, education, wealth, or prestige.
+</p>
+
+<h4>Example</h4>
+<p>
+A person seeks a partner with greater economic resources or social standing.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Marriage Market, Homogamy, Hypogamy
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+How might social class influence partner selection?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Hypogamy</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+Marrying or partnering with someone perceived to have lower social status, education, wealth, or prestige.
+</p>
+
+<h4>Example</h4>
+<p>
+A person with a graduate degree forms a relationship with someone who has significantly less formal education.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Hypergamy, Marriage Market, Heterogamy
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+How can social expectations influence reactions to hypogamy?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Equity Theory</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+A theory suggesting that people are most satisfied when they believe rewards and contributions within a relationship are relatively fair.
+</p>
+
+<h4>Example</h4>
+<p>
+Partners may feel dissatisfied if one person consistently contributes more time, money, effort, or emotional labor.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Exchange Theory, Relationship Satisfaction, Commitment
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+Why is perceived fairness important in relationships?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Dowry</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+Property, money, goods, or wealth transferred by a bride's family during marriage arrangements in some societies.
+</p>
+
+<h4>Example</h4>
+<p>
+Historically, dowries often served economic and social functions within marriage systems.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Marriage Market, Bride Price, Family Systems
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+Why do marriage customs vary across cultures?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Bride Price</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+Money, goods, or resources provided by the groom or groom's family to the bride's family as part of marriage arrangements in some societies.
+</p>
+
+<h4>Example</h4>
+<p>
+Bride price practices often reflect cultural traditions and economic relationships between families.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Dowry, Marriage Systems, Family Structure
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+How do cultural traditions shape marriage customs?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+<div class="card concept-card">
+<h3>Principle of Least Interest</h3>
+
+<span class="label">Chapter 8</span>
+
+<h4>Definition</h4>
+<p>
+The idea that the person less emotionally invested in a relationship often possesses greater power within that relationship.
+</p>
+
+<h4>Example</h4>
+<p>
+A partner who appears less committed may have greater influence over relationship decisions because they have less to lose if the relationship ends.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Exchange Theory, Equity Theory, Power
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+How can emotional investment affect power in relationships?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">Mark as Reviewed</button>
+</div>
+
+</div>
+
+<div class="card" style="margin-top:20px;">
+<h3>💘 Dating Reflection Activity</h3>
+
+<p>
+Think about the last three people you became close friends with or dated.
+</p>
+
+<ul>
+<li>Did proximity play a role?</li>
+<li>Did you have similar interests or values?</li>
+<li>Were there filters that influenced who you considered as a friend or partner?</li>
+<li>How important was fairness in the relationship?</li>
+</ul>
+
+<div class="quick-check">
+<strong>Think About It:</strong>
+Which concept—Propinquity, Homogamy, Filter Theory, or Equity Theory—best explains your experiences?
+</div>
+
+</div>
+
+</div>
+
+</div>
+```
+```html
+<!-- SECTION 7: CONSENT, SEXUAL ASSAULT & SAFETY -->
+
+<div class="section">
+
+<button onclick="toggleSection(this)">⚠️ Consent, Sexual Assault & Safety</button>
+
+<div class="section-content">
+
+<div class="card-grid">
+
+<div class="card concept-card">
+<h3>Sexual Assault</h3>
+
+<span class="label">Chapter 8</span>
+<span class="label">Safety Concept</span>
+
+<h4>Definition</h4>
+<p>
+Sexual assault refers to sexual contact or behavior that occurs without a person's consent. It includes a wide range of unwanted sexual acts.
+</p>
+
+<h4>Example</h4>
+<p>
+A person is pressured, manipulated, threatened, incapacitated, or forced into sexual activity without freely given consent.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Consent, Acquaintance Rape, Date Rape, Power, Socialization
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+Why is consent the central issue when defining sexual assault?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">
+Mark as Reviewed
+</button>
+
+</div>
+
+<div class="card concept-card">
+<h3>Rape</h3>
+
+<span class="label">Chapter 8</span>
+<span class="label">Safety Concept</span>
+
+<h4>Definition</h4>
+<p>
+Rape is a form of sexual assault involving sexual penetration without consent.
+</p>
+
+<h4>Example</h4>
+<p>
+Sociologists examine rape through individual experiences, social norms, gender expectations, legal systems, power dynamics, and cultural beliefs.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Sexual Assault, Consent, Power, Gender Socialization
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+Why do sociologists study both individual experiences and social factors when examining rape?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">
+Mark as Reviewed
+</button>
+
+</div>
+
+<div class="card concept-card">
+<h3>Acquaintance Rape</h3>
+
+<span class="label">Chapter 8</span>
+<span class="label">Safety Concept</span>
+
+<h4>Definition</h4>
+<p>
+A form of rape committed by someone known to the victim, such as a friend, classmate, coworker, neighbor, or acquaintance.
+</p>
+
+<h4>Example</h4>
+<p>
+The individuals know one another socially, but consent is absent.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Consent, Sexual Assault, Social Relationships
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+Why does knowing someone never replace the need for consent?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">
+Mark as Reviewed
+</button>
+
+</div>
+
+<div class="card concept-card">
+<h3>Date Rape</h3>
+
+<span class="label">Chapter 8</span>
+<span class="label">Safety Concept</span>
+
+<h4>Definition</h4>
+<p>
+A form of acquaintance rape occurring within a dating or romantic relationship.
+</p>
+
+<h4>Example</h4>
+<p>
+Two people may be dating, but consent must still be freely given and can be withdrawn at any time.
+</p>
+
+<h4>Connects To</h4>
+<p>
+Dating, Consent, Sexual Assault, Healthy Relationships
+</p>
+
+<div class="quick-check">
+<strong>Quick Check:</strong>
+Why does being in a relationship not automatically imply consent?
+</div>
+
+<button class="review-btn" onclick="markReviewed(this)">
+Mark as Reviewed
+</button>
+
+</div>
+
+</div>
+
+<div class="card" style="margin-top:20px; border-left:6px solid #d62828;">
+
+<h3>🛡️ Understanding Consent</h3>
+
+<p>
+Consent is a clear, voluntary, informed, and ongoing agreement between participants. Consent can be withdrawn at any time and cannot be given through pressure, coercion, intimidation, threats, manipulation, or incapacitation.
+</p>
+
+<p>
+Healthy relationships are built on communication, respect, trust, and mutual decision-making.
+</p>
+
+<div class="quick-check">
+<strong>Reflection:</strong>
+How do communication, respect, and boundaries contribute to healthy relationships?
+</div>
+
+</div>
+
+<div class="card" style="margin-top:20px;">
+
+<h3>🌎 Sociological Perspective</h3>
+
+<p>
+Sociologists study sexual assault not only as an individual experience but also as a social issue connected to culture, gender socialization, power, inequality, laws, institutions, and community responses.
+</p>
+
+<p>
+Understanding these broader influences helps researchers identify risk factors, improve prevention efforts, support survivors, and strengthen social institutions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+```
+
+<script>
+function toggleSection(button) {
+  const content = button.nextElementSibling;
+  content.style.display = content.style.display === "block" ? "none" : "block";
+}
+
+function markReviewed(button) {
+  button.classList.toggle("done");
+  button.textContent = button.classList.contains("done") ? "Reviewed ✓" : "Mark as Reviewed";
+}
+
+document.getElementById("searchBox").addEventListener("input", function() {
+  const searchTerm = this.value.toLowerCase();
+  const cards = document.querySelectorAll(".concept-card");
+  const sections = document.querySelectorAll(".section-content");
+
+  if (searchTerm.length > 0) {
+    sections.forEach(section => section.style.display = "block");
+  }
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(searchTerm) ? "block" : "none";
+  });
+});
+
+function showScenario() {
+  const value = document.getElementById("genderScenario").value;
+  const result = document.getElementById("scenarioResult");
+
+  if(value === "family"){
+    result.innerHTML = "👨‍👩‍👧 Family: Families may teach gender expectations through toys, chores, clothing, praise, discipline, and role modeling.";
+  }
+
+  else if(value === "school"){
+    result.innerHTML = "🏫 School: Schools may reinforce gender through the hidden curriculum, classroom examples, dress codes, peer interactions, and expectations about behavior.";
+  }
+
+  else if(value === "peers"){
+    result.innerHTML = "👥 Peer Group: Peers may reward gender conformity or punish behavior viewed as outside expected gender roles through teasing, exclusion, approval, or social pressure.";
+  }
+
+  else if(value === "media"){
+    result.innerHTML = "📱 Media and Popular Culture: Media may reinforce gender stereotypes through images of beauty, masculinity, femininity, relationships, parenting, work, and success.";
+  }
+
+  else{
+    result.innerHTML = "Choose a setting above.";
+  }
+}
+</script>
+
+</body>
+</html>
+```
